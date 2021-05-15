@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   const [cards, setCards] = useState([]);
-  const [loaded, setLoaded] = useState(false)
   const [loading, setLoading] = useState(false)
   const [page, setPage] = useState(1)
   const [keywords, setKeywords] = useState("")
@@ -29,7 +28,6 @@ function App() {
   const onClicked = () => {
     setKeywords(document.getElementById("search").value)
     setCards([])
-    setLoaded(false)
     setPage(1)
   }
 
@@ -41,10 +39,7 @@ function App() {
   };
   
   useEffect(() => {
-    if(!loaded){
-      getData()  
-      setLoaded(true)
-    }
+    getData()  
     window.addEventListener("scroll", onScroll);
 
     return () => [window.removeEventListener("scroll", onScroll)]

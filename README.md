@@ -14,6 +14,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+### `npm install -g serve`
+
+Install serve.
+
+### `serve -s build`
+
+Serve the app on static server.
+Go to the copied local address.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
