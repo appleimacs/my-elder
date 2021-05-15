@@ -18,7 +18,7 @@ function App() {
     const response = await fetch(`https://api.elderscrollslegends.io/v1/cards/?pageSize=20&page=${page}&name=${keywords}`).then(setLoading(true));
     const data = await response.json();
 
-    if(page>0 && data){
+    if(page>0 && data.cards){
       setCards(cards.concat(data.cards))
     }else if(data){
       setCards(data.cards)
