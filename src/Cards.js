@@ -15,11 +15,12 @@ const Cards = (props) => {
         cards.map((card, index)=>
             <Col className="card-deck mt-4 ml-2" key={index} 
                 sm={{span:6}} lg={{span:3}} md={{span:4}}>
-                <Card>
+                <Card className="bg-light border-dark">
                     <Card.Img src={card.imageUrl} />
                     <Card.Body>
-                        <Card.Title>{card.name} / {card.type} / {card?.set?.name}</Card.Title>
-                        <Card.Text>{card.text}</Card.Text>
+                        <Card.Title>{card.name}</Card.Title>
+                        <p className="text-left font-italic font-weight-light">{card.type}/{card?.set?.name}</p>
+                        <Card.Text className="text-left">{card.text}</Card.Text>
                     </Card.Body>
                 </Card>
             </Col>

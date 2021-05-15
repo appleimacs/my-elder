@@ -2,6 +2,17 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## TODOS
+
+- only show spinner if there are more cards
+- cooler styles
+- accessibility improvements
+- more tests
+- ability to sort the cards by name/set/type
+- ability to filter the cards by set/type
+- ability to add cards into a deck
+- ability to drarw from a deck randomly
+
 ## Install dependency
 
 `npm install react-bootstrap bootstrap@4.6.0`
