@@ -20,6 +20,9 @@ const Search = (props) => {
           <InputGroup.Append>
             <Button onClick={props.onClicked} >Search</Button>
           </InputGroup.Append>
+          <InputGroup.Append>
+            <Button onClick={props.reset} id="reset">Reset</Button>
+          </InputGroup.Append>
         </InputGroup>
       </Col>
     </Row>

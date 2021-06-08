@@ -14,3 +14,10 @@ test('calls onKeyPress', () => {
   fireEvent.keyPress(document.getElementById("search"), { key: 'Enter', charCode: '13' })
   expect(onKeyPress).toHaveBeenCalledTimes(1)
 })
+
+test('calls reset prop when clicked', () => {
+  const reset = jest.fn()
+  render(<Search reset={reset} />)
+  fireEvent.click(document.getElementById("reset"))
+  expect(reset).toHaveBeenCalledTimes(1)
+})

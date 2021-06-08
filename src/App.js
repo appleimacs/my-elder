@@ -17,9 +17,11 @@ function App() {
   const [input, setInput] = useState("")
 
   async function getData() {
-    const response = await fetch(`https://api.elderscrollslegends.io/v1/cards/?pageSize=20&page=${page}&name=${keywords}`).then(setLoading(true));
-    const data = await response.json();
-
+    const response = await fetch(`https://api.elderscrollslegends.io/v1/cards/?pageSize=20&page=${page}&name=${keywords}`)
+    const data = await response.json()
+    if(data._totalCount !==0){
+      setLoading(true)
+    }
     if(page>0 && data){
       setCards(cards.concat(data.cards))
     }else if(data){
@@ -35,6 +37,11 @@ function App() {
     setCards([])
     setLoaded(false)
     setPage(1)
+  }
+
+  const reset = () => {
+    setInput("")
+    onClicked()
   }
 
   const onKeyPress = (e) => {
@@ -65,7 +72,7 @@ function App() {
 
   return (
     <Container className="App">
-      <Search onClicked={onClicked} onKeyPress={onKeyPress} />
+      <Search onClicked={onClicked} onKeyPress={onKeyPress} reset={reset} />
       <div id="total">Total Count = {total}</div>
         {loading &&<Spinner className="spinner" animation="border" variant="primary"/>} 
         <Cards cards={cards}/>
