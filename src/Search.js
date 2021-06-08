@@ -15,6 +15,7 @@ const Search = (props) => {
             placeholder="Search for a card name"
             aria-label="Search"
             id="search"
+            onKeyPress={(e)=>{props.onKeyPress(e)}}
           />
           <InputGroup.Append>
             <Button onClick={props.onClicked} >Search</Button>

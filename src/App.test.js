@@ -1,9 +1,9 @@
-import { render, screen, fireEvent } from '@testing-library/react';
-import Button from 'react-bootstrap/Button';
+import { render } from '@testing-library/react';
+import App from './App'
 
-test('calls onClick prop when clicked', () => {
-  const handleClick = jest.fn()
-  render(<Button onClick={handleClick}>Search</Button>)
-  fireEvent.click(screen.getByText(/Search/i))
-  expect(handleClick).toHaveBeenCalledTimes(1)
+test('app renders', () => {
+  render(<App />);
+  const el = document.getElementById("total");
+  expect(el).toBeInTheDocument();
+
 })
